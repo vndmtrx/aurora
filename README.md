@@ -17,5 +17,4 @@ Site oficial: http://blog.vndmtrx.com.br/
 
 
 ### Download
-* [Download](https://github.com/vndmtrx/aurora/)
-* [Git](git@github.com:vndmtrx/aurora.git)
+* [Aurora](https://github.com/vndmtrx/aurora/archive/master.zip)
