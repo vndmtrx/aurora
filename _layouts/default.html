@@ -1,0 +1,31 @@
+---
+theme :
+  name : aurora
+---
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+
+	<body>
+		{% include header.html %}
+		
+		<div class="sidebar col-md-3 hidden-sm hidden-xs">
+			{% include sidebar.html %}
+		</div>
+		
+		<div class="article col-md-9 col-md-offset-3 col-sm-12">
+			<article class="col-sm-10">
+			{{ content }}
+			</article>
+			<footer class="col-sm-10">
+				<hr/>
+				<p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }} com Jekyll. Tema <a href="#">aurora</a>, por Vndmtrx.</p>
+			</footer>
+			<a href="#" class="topo">Topo</a>
+		</div>
+		
+		{% include scripts.html %}
+	</body>
+
+</html>

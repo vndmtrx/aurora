@@ -1,0 +1,14 @@
+{% assign var_mes = var_data | date: "%-m" %}{% case var_mes %}
+	{% when '1' %}{% assign m = "Janeiro" %}
+	{% when '2' %}{% assign m = "Fevereiro" %}
+	{% when '3' %}{% assign m = "Mar&ccedil;o" %}
+	{% when '4' %}{% assign m = "Abril" %}
+	{% when '5' %}{% assign m = "Maio" %}
+	{% when '6' %}{% assign m = "Junho" %}
+	{% when '7' %}{% assign m = "Julho" %}
+	{% when '8' %}{% assign m = "Agosto" %}
+	{% when '9' %}{% assign m = "Setembro" %}
+	{% when '10' %}{% assign m = "Outubro" %}
+	{% when '11' %}{% assign m = "Novembro" %}
+	{% when '12' %}{% assign m = "Dezembro" %}
+{% endcase %}{{ var_data | date: "%-d de" }} {{ m }} {{ var_data | date: "de %Y" }}

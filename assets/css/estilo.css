@@ -1,0 +1,216 @@
+@import url(/assets/comic-neue/font.css);
+
+.sidebar {
+	position: fixed;
+	top: 0px;
+	padding-top: 5%;
+	background-color: #2c502c;
+	color: #fff;
+}
+
+.sidebar-header {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.sidebar-header .title{
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.sidebar-header .title a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.sidebar-nav {
+	padding-top: 10px;
+	margin: 0 -15px;
+	letter-spacing: 3px;
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav a {
+	padding-left: 30px;
+	font-weight: normal;
+	color: #FFF;
+}
+
+.sidebar-nav a:hover {
+	text-decoration: none;
+	background-color: #3a693a;
+}
+
+.sidebar-nav-item {
+	display: block;
+	padding: 15px 0px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#bio {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 11px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#contact-list li .fa,
+article .share .btn {
+	-o-transition:color .2s ease-out, background 1s ease-in;
+	-ms-transition:color .2s ease-out, background 1s ease-in;
+	-moz-transition:color .2s ease-out, background 1s ease-in;
+	-webkit-transition:color .2s ease-out, background 1s ease-in;
+	transition:color .2s ease-out, background 1s ease-in;
+}
+
+#contact-list li:hover .fa-twitter, article .share .twitter:hover {
+	color: #00ACEE;
+	border-color: #00ACEE;
+}
+#contact-list li:hover .fa-linkedin {
+	color: #1D87BD;
+}
+#contact-list li:hover .fa-envelope {
+	color: #E93E30;
+}
+#contact-list li:hover .fa-facebook-square {
+	color: #3b5998;
+	border-color: #3b5998;
+}
+#contact-list li:hover .fa-rss {
+	color: #e74c3c;
+}
+article .share .facebook-square:hover {
+	color: #3b5998;
+	border-color: #3b5998;
+}
+article .share .gplus:hover {
+	color: #C13929;
+	border-color: #C13929;
+}
+
+#contact-list-secondary {
+	padding-bottom: 10px;
+}
+
+.page-header {
+	color: #e74c3c;
+	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+
+.post-date {
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 3px;
+}
+
+.post-info {
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+article.home div a, article.home pre a { color: #2c3e50; }
+article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
+article img { max-width: 100%; }
+
+.page-header h1,
+.page-header h2,
+.page-header h3,
+.page-header h4,
+.page-header h5,
+.page-header h6,
+.title { 
+	font-family: 'Comic Neue Angular', sans-serif; 
+	font-weight: bold;
+}
+
+article.home h1,
+article.home h2,
+article.home h3,
+article.home h4,
+article.home h5,
+article.home h6 {
+	font-family: 'Comic Neue Angular', sans-serif;
+	color: #f2756a;
+	font-weight: bold;
+}
+
+article.home h1 a,
+article.home h2 a,
+article.home h3 a,
+article.home h4 a {
+	color: #f2756a;
+}
+article.home h1 a:hover,
+article.home h2 a:hover,
+article.home h3 a:hover,
+article.home h4 a:hover {
+	color: #e74c3c;
+}
+
+.author .author-image {
+	float: left;
+	margin-right: 20px;
+}
+
+footer {
+	font-family: 'Comic Neue Angular';
+	font-weight: bold;
+}
+
+/* nav-vertical-tabs component */
+.nav-tabs-vertical {
+	border-right: 1px solid #ddd;
+}
+
+.nav-tabs-vertical li {
+	margin-right: -1px;
+}
+
+.nav-tabs-vertical>li.active>a, .nav-tabs-vertical>li.active>a:hover, .nav-tabs-vertical>li.active>a:focus {
+	color: #555;
+	cursor: default;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-right-color: transparent;
+}
+
+.nav-tabs-vertical>li>a {
+	line-height: 1.428571429;
+	border: 1px solid transparent;
+	border-radius: 4px 0 0 4px;
+}
+
+.badge { background: #F2756A; }
+
+#nav-menu{
+	position: fixed;
+	top: 45px;
+	right: 45px;
+	z-index: 2000;
+}
+#nav-menu .dropdown-menu {
+	left: inherit;
+	right: 0px;
+}
+
+ul.dropdown-menu>li>a>i.fa {
+	width: 1.3em;
+}
+
+.topo {
+	position: fixed;
+	bottom: 2em;
+	right: 0px;
+	text-decoration: none;
+	color: #000000;
+	background-color: rgba(235, 235, 235, 0.80);
+	font-size: 12px;
+	padding: 1em;
+	display: none;
+}
+
+.topo:hover {    
+	background-color: rgba(135, 135, 135, 0.50);
+}

@@ -1,0 +1,31 @@
+# Site settings
+title: Vndmtrx
+descricao: Blog pra coisas de nerd e talz
+baseurl: "" # the subpath of your site, e.g. /blog/
+
+limite_atom_posts: 10
+
+url: "http://blog.vndmtrx.com.br"
+twitter_username: vndmtrx
+github_username: vndmtrx
+disqus_username: vndmtrx
+
+path_categorias: /categorias.html
+path_marcadores: /marcadores.html
+
+paginate: 5
+paginate_path: "page:num"
+exclude: ["README.md"]
+
+author:
+  name: Eduardo Rolim
+  github: vndmtrx
+  twitter: vndmtrx
+  bio: "Da próxima vez que alguém me perguntar por que estou reinventando a roda, vou dizer que é por que a API Roda está 'deprecated'."
+  email_md5: f92ef304ee700d49e65cd9a6df279f7e
+
+# Build settings
+highlighter: pygments
+markdown: kramdown
+
+host: 0.0.0.0

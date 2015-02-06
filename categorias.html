@@ -1,0 +1,51 @@
+---
+layout: page
+title: Categorias
+header: Posts por Categoria
+group: nav
+---
+<div class="col-sm-3 col-xs-6">
+		<ul class="nav nav-tabs-vertical">
+			{% assign lista_categorias = site.categories %}
+			{% if lista_categorias.first[0] == null %}
+				{% for categoria in lista_categorias %}
+					<li>
+						<a href="{{ site.path_categorias | prepend: site.baseurl }}#{{ categoria | replace:' ','-' }}-ref" data-toggle="tab">
+							{{ categoria | capitalize }} <span class="badge pull-right">{{ site.categories[categoria].size }}</span>
+						 </a>
+					</li>
+				{% endfor %}
+			{% else %}
+				{% for categoria in lista_categorias %}
+					<li>
+						<a href="{{ site.path_categorias | prepend: site.baseurl }}#{{ categoria[0] | replace:' ','-' }}-ref" data-toggle="tab">
+							{{ categoria[0] | capitalize }} <span class="badge pull-right">{{ categoria[1].size }}</span>
+						</a>
+					</li>
+				{% endfor %}
+			{% endif %}
+			{% assign lista_categorias = nil %}
+		</ul>
+</div>
+
+<div class="tab-content col-sm-9 col-xs-6">
+	{% for categoria in site.categories %}
+		<div class="tab-pane" id="{{ categoria[0] | replace:' ','-' }}-ref">
+			<h2 style="margin-top: 0px">Posts em {{ categoria[0] | capitalize }}</h2>
+			<ul class="list-unstyled">
+				{% assign lista_paginas = categoria[1] %}
+				{% for no in lista_paginas %}
+					{% if no.title != null %}
+						{% if group == null or group == no.group %}
+							<li style="line-height: 35px;">
+								<a href="{{no.url | prepend: site.baseurl }}">{{no.title}}</a> <span class="text-muted">- {% assign var_data = no.date %}{% include utils/formato_data %}</span>
+							</li>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				{% assign lista_paginas = nil %}
+			</ul>
+		</div>
+	{% endfor %}
+</div>
+<div class="clearfix"></div>

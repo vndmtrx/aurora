@@ -1,0 +1,116 @@
+---
+layout: default
+---
+<div class="page-header">
+	<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
+</div>
+<span class="post-date">{% assign var_data = page.date %}{% include utils/formato_data %}</span>
+ 
+	<div class="article_body">
+		<p class="post-info">
+		{% if page.shortinfo %}
+			{{ page.shortinfo | remove: '<p>' | remove: '</p>' }}
+		{% elsif page.description %}
+			{{ page.description | remove: '<p>' | remove: '</p>' }}
+		{% endif %}
+		</p>
+		<div class="markdown-body">{{ content }}</div>
+	</div>
+
+	<div class="comments col-sm-12">
+		<hr/>
+		{% include disqus.html %}
+		<hr/>
+	</div>
+
+<div class="sharing col-sm-12">
+	<section class="col-sm-6 author">
+		<div class="categories col-sm-12">
+			{% unless page.categories == empty %}
+			<ul class="tag_box list-unstyled list-inline">
+			  <li><i class="fa fa-folder-open"></i></li>
+			  {% assign lista_categorias = page.categories %}
+			  {% if lista_categorias.first[0] == null %}
+				{% for categoria in lista_categorias %} 
+					<li><a href="{{ site.path_categorias | prepend: site.baseurl }}#{{ categoria }}-ref">
+						{{ categoria | join: "/" }} <span>({{ site.categories[categoria].size }})</span>
+						{% unless forloop.last %},{% endunless %}
+					</a></li>
+				{% endfor %}
+			  {% else %}
+				{% for categoria in lista_categorias %} 
+					<li><a href="{{ site.path_categorias | prepend: site.baseurl }}#{{ categoria[0] }}-ref">
+						{{ categoria[0] | join: "/" }} <span>/{{ categoria[1].size }})</span>
+					</a></li>
+				{% endfor %}
+			  {% endif %}
+			</ul>
+			{% endunless %}
+		</div>
+
+		<div class="col-sm-12">
+			{% unless page.tags == empty %}
+			<ul class="list-inline">
+			  <li><i class="fa fa-tags"></i></li>
+			  {% assign lista_marcadores = page.tags %}
+			  {% if lista_marcadores.first[0] == null %}
+				{% for marcador in lista_marcadores %} 
+					<li>
+						<a href="{{ site.path_tags | prepend: site.baseurl }}#{{ marcador }}-ref">
+						{{ marcador }} <span>({{ site.tags[marcador].size }})</span>
+						{% unless forloop.last %},{% endunless %}
+						</a>
+					</li>
+				{% endfor %}
+			  {% else %}
+				{% for marcador in lista_marcadores %} 
+					<li>
+						<a href="{{ site.path_tags | prepend: site.baseurl }}#{{ marcador[0] }}-ref">
+							{{ marcador[0] }} <span>({{ marcador[1].size }})</span>
+							{% unless forloop.last %},{% endunless %}
+						</a>
+					</li>
+				
+				{% endfor %}
+			  {% endif %}
+			  {% assign lista_marcadores = nil %}
+			</ul>
+			{% endunless %}
+		</div>
+	</section>
+	
+	<section class="share col-sm-6">
+		<h4 class="section-title">Compartilhe esse post</h4>
+		<a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text={{page.title | encode}}{% if site.author.twitter%}&via={{site.author.twitter}}{% endif %}"
+		   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+		  <i class="fa fa-twitter fa-lg"></i>
+		  Twitter
+		</a>
+		<a class="btn btn-default btn-sm facebook-square" href="https://www.facebook.com/sharer/sharer.php"
+		   onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+		  <i class="fa fa-facebook fa-lg"></i>
+		  Facebook
+		</a>
+		<a class="btn btn-default btn-sm gplus"
+		   onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+		  <i class="fa fa-google-plus fa-lg"></i>
+		  Google+
+		</a>
+	</section>
+</div>
+
+<div class="paging col-sm-12">
+	<hr/>
+	<ul class="pager">
+		{% if page.previous %}
+			<li class="previous"><a href="{{ page.previous.url | prepend: site.baseurl }}" title="{{ page.previous.title }}">&larr;<span class="hidden-xs"> Anterior</span></a></li>
+		{% else %}
+			<li class="previous disabled"><a>&larr;<span class="hidden-xs"> Anterior</span></a></li>
+		{% endif %}
+		{% if page.next %}
+			<li class="next"><a href="{{ page.next.url | prepend: site.baseurl }}" title="{{ page.next.title }}"><span class="hidden-xs">Próximo </span>&rarr;</a></li>
+		{% else %}
+			<li class="next disabled"><a><span class="hidden-xs">Próximo </span>&rarr;</a>
+		{% endif %}
+	</ul>
+</div>
